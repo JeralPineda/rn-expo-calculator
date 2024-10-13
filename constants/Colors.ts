@@ -6,4 +6,4 @@ export const Colors = {
   textPrimary: "#ffffff",
   textSecondary: "#666666",
   background: "#000000",
-};
+} as const;
