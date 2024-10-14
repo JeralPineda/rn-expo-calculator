@@ -39,6 +39,98 @@ export default function CalculatorApp() {
           onPress={() => console.log("÷")}
         />
       </View>
+
+      <View style={globalStyles.row}>
+        {/* Botón */}
+        <Button
+          label="7"
+          background="darkGray"
+          onPress={() => console.log("7")}
+        />
+        <Button
+          label="8"
+          background="darkGray"
+          onPress={() => console.log("8")}
+        />
+        <Button
+          label="9"
+          background="darkGray"
+          onPress={() => console.log("9")}
+        />
+        <Button
+          label="x"
+          background="colorOrange"
+          onPress={() => console.log("x")}
+        />
+      </View>
+
+      <View style={globalStyles.row}>
+        {/* Botón */}
+        <Button
+          label="4"
+          background="darkGray"
+          onPress={() => console.log("4")}
+        />
+        <Button
+          label="5"
+          background="darkGray"
+          onPress={() => console.log("5")}
+        />
+        <Button
+          label="6"
+          background="darkGray"
+          onPress={() => console.log("6")}
+        />
+        <Button
+          label="-"
+          background="colorOrange"
+          onPress={() => console.log("-")}
+        />
+      </View>
+
+      <View style={globalStyles.row}>
+        {/* Botón */}
+        <Button
+          label="1"
+          background="darkGray"
+          onPress={() => console.log("1")}
+        />
+        <Button
+          label="2"
+          background="darkGray"
+          onPress={() => console.log("2")}
+        />
+        <Button
+          label="3"
+          background="darkGray"
+          onPress={() => console.log("3")}
+        />
+        <Button
+          label="+"
+          background="colorOrange"
+          onPress={() => console.log("+")}
+        />
+      </View>
+
+      <View style={globalStyles.row}>
+        {/* Botón */}
+        <Button
+          label="0"
+          background="darkGray"
+          onPress={() => console.log("0")}
+          dobleSize
+        />
+        <Button
+          label="."
+          background="darkGray"
+          onPress={() => console.log(".")}
+        />
+        <Button
+          label="="
+          background="colorOrange"
+          onPress={() => console.log("=")}
+        />
+      </View>
     </View>
   );
 }
