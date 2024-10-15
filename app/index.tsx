@@ -126,7 +126,7 @@ export default function CalculatorApp() {
         <Button
           label="."
           background="darkGray"
-          onPress={() => console.log(".")}
+          onPress={() => buildNumber(".")}
         />
         <Button
           label="="
