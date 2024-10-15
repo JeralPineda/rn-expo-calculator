@@ -2,13 +2,16 @@ import { View } from "react-native";
 import { ThemeText } from "@/components/ThemeText";
 import { globalStyles } from "@/styles/global-styles";
 import { Button } from "@/components/Button";
+import { useCalculator } from "@/hooks/useCalculator";
 
 export default function CalculatorApp() {
+  const { formula, buildNumber } = useCalculator();
+
   return (
     <View style={globalStyles.calculatorContainer}>
       {/* Resultados */}
       <View style={{ paddingHorizontal: 30, paddingBottom: 20 }}>
-        <ThemeText variant="h1">50 x 50</ThemeText>
+        <ThemeText variant="h1">{formula}</ThemeText>
         <ThemeText variant="h2">100</ThemeText>
       </View>
 
@@ -45,17 +48,17 @@ export default function CalculatorApp() {
         <Button
           label="7"
           background="darkGray"
-          onPress={() => console.log("7")}
+          onPress={() => buildNumber("7")}
         />
         <Button
           label="8"
           background="darkGray"
-          onPress={() => console.log("8")}
+          onPress={() => buildNumber("8")}
         />
         <Button
           label="9"
           background="darkGray"
-          onPress={() => console.log("9")}
+          onPress={() => buildNumber("9")}
         />
         <Button
           label="x"
@@ -69,17 +72,17 @@ export default function CalculatorApp() {
         <Button
           label="4"
           background="darkGray"
-          onPress={() => console.log("4")}
+          onPress={() => buildNumber("4")}
         />
         <Button
           label="5"
           background="darkGray"
-          onPress={() => console.log("5")}
+          onPress={() => buildNumber("5")}
         />
         <Button
           label="6"
           background="darkGray"
-          onPress={() => console.log("6")}
+          onPress={() => buildNumber("6")}
         />
         <Button
           label="-"
@@ -93,17 +96,17 @@ export default function CalculatorApp() {
         <Button
           label="1"
           background="darkGray"
-          onPress={() => console.log("1")}
+          onPress={() => buildNumber("1")}
         />
         <Button
           label="2"
           background="darkGray"
-          onPress={() => console.log("2")}
+          onPress={() => buildNumber("2")}
         />
         <Button
           label="3"
           background="darkGray"
-          onPress={() => console.log("3")}
+          onPress={() => buildNumber("3")}
         />
         <Button
           label="+"
@@ -117,7 +120,7 @@ export default function CalculatorApp() {
         <Button
           label="0"
           background="darkGray"
-          onPress={() => console.log("0")}
+          onPress={() => buildNumber("0")}
           dobleSize
         />
         <Button
