@@ -1,8 +1,17 @@
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { useFonts } from "expo-font";
 import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { globalStyles } from "@/styles/global-styles";
+
+import * as NavigationBar from "expo-navigation-bar";
+
+const isAndroid = Platform.OS === "android";
+
+// Set the background color of the status bar in IOS
+if (isAndroid) {
+  NavigationBar.setBackgroundColorAsync("black");
+}
 
 export default function RootLayout() {
   const [loaded] = useFonts({
