@@ -16,6 +16,7 @@ export default function CalculatorApp() {
     multiplyOperation,
     substractOperation,
     addOperation,
+    calculateResult,
   } = useCalculator();
 
   return (
@@ -131,11 +132,7 @@ export default function CalculatorApp() {
           background="darkGray"
           onPress={() => buildNumber(".")}
         />
-        <Button
-          label="="
-          background="colorOrange"
-          onPress={() => console.log("=")}
-        />
+        <Button label="=" background="colorOrange" onPress={calculateResult} />
       </View>
     </View>
   );
