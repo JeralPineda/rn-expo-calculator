@@ -5,7 +5,8 @@ import { Button } from "@/components/Button";
 import { useCalculator } from "@/hooks/useCalculator";
 
 export default function CalculatorApp() {
-  const { formula, buildNumber } = useCalculator();
+  const { formula, buildNumber, clean, toggleSign, deleteLast } =
+    useCalculator();
 
   return (
     <View style={globalStyles.calculatorContainer}>
@@ -18,22 +19,17 @@ export default function CalculatorApp() {
       {/* Fila de Botones */}
       <View style={globalStyles.row}>
         {/* Botón */}
-        <Button
-          label="C"
-          background="lightGray"
-          onPress={() => console.log("C")}
-          blackText
-        />
+        <Button label="C" background="lightGray" onPress={clean} blackText />
         <Button
           label="+/-"
           background="lightGray"
-          onPress={() => console.log("+/-")}
+          onPress={toggleSign}
           blackText
         />
         <Button
           label="del"
           background="lightGray"
-          onPress={() => console.log("del")}
+          onPress={deleteLast}
           blackText
         />
         <Button
