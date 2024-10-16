@@ -5,15 +5,30 @@ import { Button } from "@/components/Button";
 import { useCalculator } from "@/hooks/useCalculator";
 
 export default function CalculatorApp() {
-  const { formula, buildNumber, clean, toggleSign, deleteLast } =
-    useCalculator();
+  const {
+    formula,
+    prevNumber,
+    buildNumber,
+    clean,
+    toggleSign,
+    deleteLast,
+    divideOperation,
+    multiplyOperation,
+    substractOperation,
+    addOperation,
+  } = useCalculator();
 
   return (
     <View style={globalStyles.calculatorContainer}>
       {/* Resultados */}
       <View style={{ paddingHorizontal: 30, paddingBottom: 20 }}>
         <ThemeText variant="h1">{formula}</ThemeText>
-        <ThemeText variant="h2">100</ThemeText>
+
+        {formula === prevNumber ? (
+          <ThemeText variant="h2"> </ThemeText>
+        ) : (
+          <ThemeText variant="h2">{prevNumber}</ThemeText>
+        )}
       </View>
 
       {/* Fila de Botones */}
@@ -32,11 +47,7 @@ export default function CalculatorApp() {
           onPress={deleteLast}
           blackText
         />
-        <Button
-          label="÷"
-          background="colorOrange"
-          onPress={() => console.log("÷")}
-        />
+        <Button label="÷" background="colorOrange" onPress={divideOperation} />
       </View>
 
       <View style={globalStyles.row}>
@@ -57,9 +68,9 @@ export default function CalculatorApp() {
           onPress={() => buildNumber("9")}
         />
         <Button
-          label="x"
+          label="×"
           background="colorOrange"
-          onPress={() => console.log("x")}
+          onPress={multiplyOperation}
         />
       </View>
 
@@ -83,7 +94,7 @@ export default function CalculatorApp() {
         <Button
           label="-"
           background="colorOrange"
-          onPress={() => console.log("-")}
+          onPress={substractOperation}
         />
       </View>
 
@@ -104,11 +115,7 @@ export default function CalculatorApp() {
           background="darkGray"
           onPress={() => buildNumber("3")}
         />
-        <Button
-          label="+"
-          background="colorOrange"
-          onPress={() => console.log("+")}
-        />
+        <Button label="+" background="colorOrange" onPress={addOperation} />
       </View>
 
       <View style={globalStyles.row}>
